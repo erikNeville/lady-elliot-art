@@ -6,7 +6,6 @@ import Footer from './components/footer/Footer';
 import HomeScreen from './screens/HomeScreen';
 import Navbar from './components/navigation/Navbar';
 
-
 function App() {
 	return (
 		<Router>

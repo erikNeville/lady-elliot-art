@@ -7,7 +7,7 @@ const LogoWrapper = styled.nav`
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  font-size: 4vh;
+  font-size: 3.2vh;
   font-weight: bold;
 
   .logo-link {
@@ -15,8 +15,14 @@ const LogoWrapper = styled.nav`
     display: flex;
     flex-flow: column nowrap;
     text-decoration: none;
+    transition: all 0.4s ease-out;
+    &:hover {
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      /* border: 2px solid black; */
+    }
 
-    &:focus {
+    /* &:focus {
       outline: none;
     }
     &::after {
@@ -31,18 +37,23 @@ const LogoWrapper = styled.nav`
     &:hover::after {
       transform: width;
       width: 80%;
-    }
+    } */
   }
 `;
 
-function Logo() {
+const Logo = (props) => {
+	const closeNav = () => {
+		if (props.displayMobile === true) {
+			props.toggleMobileNav();
+		}
+	};
 	return (
 		<LogoWrapper>
-			<Link to='/' className='logo-link'>
+			<Link to='/' className='logo-link' onClick={closeNav}>
         Lady Elliot Art
 			</Link>
 		</LogoWrapper>
 	);
-}
+};
 
 export default Logo;

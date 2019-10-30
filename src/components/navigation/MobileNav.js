@@ -27,10 +27,14 @@ const MobileNavWrapper = styled.nav`
     font-size: 2.5vh;
     text-align: center;
     text-decoration: none;
+    transition: all 0.4s ease-out;
+    &:hover {
+      letter-spacing: 5px;
+    }
     &:focus {
       outline: none;
     }
-    &::after {
+    /* &::after {
       content: '';
       background: black;
       display: block;
@@ -42,7 +46,7 @@ const MobileNavWrapper = styled.nav`
     &:hover::after {
       transform: width;
       width: 12%;
-    }
+    } */
   }
 `;
 

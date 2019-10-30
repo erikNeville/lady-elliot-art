@@ -10,12 +10,13 @@ const DesktopNavWrapper = styled.nav`
   color: black;
   display: flex;
   flex-flow: row nowrap;
-  height: 11vh;
+  height: 10vh;
   justify-content: space-around;
-  width: 100%;
+  padding-top: 17px;
   
   @media screen and (max-width: 800px) {
     flex-flow: column nowrap;
+    justify-content: center;
   }
 
   .nav-links {
@@ -67,12 +68,15 @@ const DesktopNavWrapper = styled.nav`
     justify-content: center;
     padding: 0 1rem;
     text-decoration: none;
-
+    transition: all 0.4s ease-out;
+    &:hover {
+      letter-spacing: 5px;
+    }
     &:focus {
       background: rgba(0, 0, 0, 0.1);
       outline: none;
     }
-    &::after {
+    /* &::after {
       content: '';
       background: black;
       display: block;
@@ -83,14 +87,15 @@ const DesktopNavWrapper = styled.nav`
     &:hover::after {
       transform: width;
       width: 100%;
-    }
+    } */
   }
 `;
 
 const MobileNavButton = styled.button`
   background: transparent;
-  height: 6vh;
-  width: 6vh;
+  font-size: 2.5vh;
+  /* height: 6vh;
+  width: 6vh; */
   border: none;
   display: none;
 
@@ -98,9 +103,16 @@ const MobileNavButton = styled.button`
     align-items: center;
     display: flex;
     flex-flow: column nowrap;
+    font-size: 3vh;
     justify-content: center;
+    transition: all 0.4s ease-out;
+    &:hover {
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
 
-    &::after {
+    /* if we want a line */
+    /* &::after {
       content: '';
       background: black;
       display: block;
@@ -111,7 +123,7 @@ const MobileNavButton = styled.button`
     &:hover::after {
       transform: width;
       width: 100%;
-    }
+    } */
   }
   &:focus {
     outline: none;
@@ -149,16 +161,19 @@ const MobileNavButton = styled.button`
 `;
 
 const DesktopNav = (props) => {
+	
 	return (
 		<DesktopNavWrapper>
-			<Logo />
+			<Logo
+				displayMobile={props.displayMobile}
+				toggleMobileNav={props.toggleMobileNav} />
 			<div className='fade-in'>
 				<NavLinks />
 			</div>
 			<MobileNavButton
 				displayMobile={props.displayMobile}
 				onClick={props.toggleMobileNav}>
-				<p className="menu">MENU</p>
+				<p className="menu">menu</p>
 			</MobileNavButton>
 		</DesktopNavWrapper>
 	);
