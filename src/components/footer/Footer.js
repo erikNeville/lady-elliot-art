@@ -7,6 +7,7 @@ const Copywrite = styled.p`
 	bottom: 0;
 	left: 0;
 	padding: 0.5rem 1.5rem;
+	
 
 	.developer {
 		color: #A8A8A8;
@@ -14,6 +15,7 @@ const Copywrite = styled.p`
 		flex-flow: column nowrap;
 		justify-content: center;
 		text-decoration: none;
+		font-size: 12px;
 	}
 	&:focus {
 		outline: none;
@@ -28,7 +30,7 @@ const Copywrite = styled.p`
 	}
 	&:hover::after {
 		transform: width;
-		width: 209px;
+		width: 157px;
 	}
 `;
 

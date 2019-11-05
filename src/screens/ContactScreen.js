@@ -34,13 +34,19 @@ function ContactScreen() {
         If you&apos;d like to inquire about commissions, purchasing a piece of art or have questions, please contact me via email:
 			</ContactInfo>
 			<ContactInfo>
-				<a className='email' href='mailto:info@ladyelliotart.com'>info@ladyelliotart.com</a>
+				<a
+					className='email'
+					href='mailto:info@ladyelliotart.com'>info@ladyelliotart.com
+				</a>
 			</ContactInfo>
 			<ContactInfo>
         To follow my story and see upcoming and in-work projects, check out my Instagram at:
 			</ContactInfo>
 			<ContactInfo>
-				<a className='email' href='https://www.instagram.com/lady.elliot.art/'>@lady.elliot.art</a>
+				<a 
+					className='email'
+					href='https://www.instagram.com/lady.elliot.art/'>@lady.elliot.art
+				</a>
 			</ContactInfo>
 		</div>
 	);

@@ -15,7 +15,7 @@ const ImageWrapper = styled.div`
 	overflow: hidden;
 
 	.image-grid {
-		margin: 1rem 1rem;
+		margin: 1rem 2rem;
 		text-align: center;
 		-webkit-box-flex: 1;
 		-webkit-flex: 1 0 auto;
@@ -42,11 +42,11 @@ const ImageWrapper = styled.div`
 		transform: translate(-50%, -50%);
 		-ms-transform: translate(-50%, -50%);
 		text-align: center;
-		border-radius: 10px;
 	}
 
 	.info-text {
 		background-color: black;
+		border-radius: 20px;
 		color: white;
 		font-size: 16px;
 		padding: 16px;
@@ -86,7 +86,6 @@ const PaintingDisplay = (props) => {
 							</div>
 						</div>
 					</MyButton>
-					
 				</div>
 			))}
 		</ImageWrapper>
