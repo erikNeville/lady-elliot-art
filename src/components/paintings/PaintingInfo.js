@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ImageGrid = styled.div`
+	align-self: flex-start;
   flex: 1 0 auto;
   margin: 1rem 1rem;
   text-align: center;
@@ -14,19 +15,11 @@ const ImageGrid = styled.div`
   }
 `;
 
-const PaintingInfo = ({images}) => {
-	console.log(images);
+const PaintingInfo = (props) => {
 	return (
-		<div>
-			{images && images.map(image => (
-				<ImageGrid key={image.id}>
-					<img
-						className='Image'
-						src={image.src}
-						alt={image.title} />
-				</ImageGrid>
-			))}
-		</div>
+		<ImageGrid>
+			{props.image.title}
+		</ImageGrid>
 	);
 };
 

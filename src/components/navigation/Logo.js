@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const LogoWrapper = styled.nav`
@@ -54,6 +55,11 @@ const Logo = (props) => {
 			</Link>
 		</LogoWrapper>
 	);
+};
+
+Logo.propTypes = {
+	displayMobile: PropTypes.bool.isRequired,
+	toggleMobileNav: PropTypes.func.isRequired,
 };
 
 export default Logo;

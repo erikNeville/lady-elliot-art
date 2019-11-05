@@ -3,6 +3,11 @@ import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const NavLinks = (props) => {
+	const closeNav = () => {
+		if (props.displayMobile === true) {
+			props.toggleMobileNav();
+		}
+	};
 	let tempTabIndex;
 	if (props.isMobileLink) {
 		tempTabIndex = '-1';
@@ -11,17 +16,31 @@ const NavLinks = (props) => {
 	return (
 		<ul className='nav-links'>
 			<li>
-				<Link to='/about' className='link' tabIndex={tempTabIndex}>ABOUT</Link>
+				<Link
+					to='/about'
+					className='link'
+					onClick={closeNav}
+					tabIndex={tempTabIndex}>
+					ABOUT
+				</Link>
 			</li>
 			<li>
-				<Link to='/contact' className='link' tabIndex={tempTabIndex}>CONTACT</Link>
+				<Link
+					to='/contact'
+					className='link'
+					onClick={closeNav}
+					tabIndex={tempTabIndex}>
+					CONTACT
+				</Link>
 			</li>
 		</ul>
 	);
 };
 
 NavLinks.propTypes = {
-	isMobileLink: PropTypes.func,
+	isMobileLink: PropTypes.bool,
+	displayMobile: PropTypes.bool.isRequired,
+	toggleMobileNav: PropTypes.func.isRequired,
 };
 
 export default NavLinks;

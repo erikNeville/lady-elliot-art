@@ -54,14 +54,18 @@ const MobileNav = (props) => {
 	return (
 		<Collapse in={props.displayMobile}>
 			<MobileNavWrapper displayMobile={props.displayMobile}>
-				<NavLinks isMobileLink={true} />
+				<NavLinks
+					isMobileLink={true}
+					displayMobile={props.displayMobile}
+					toggleMobileNav={props.toggleMobileNav} />
 			</MobileNavWrapper>
 		</Collapse>
 	);
 };
 
 MobileNav.propTypes = {
-	displayMobile: PropTypes.func.isRequired,
+	displayMobile: PropTypes.bool.isRequired,
+	toggleMobileNav: PropTypes.func.isRequired,
 };
 
 export default MobileNav;

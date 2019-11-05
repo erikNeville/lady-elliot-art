@@ -10,6 +10,7 @@ const NavbarWrapper = styled.div`
   justify-content: flex-start;
   overflow: hidden;
   box-shadow: 0 10px 10px -5px;
+	text-align: center;
   width: 100%;
 	position: fixed;
 	z-index: 1030;
@@ -37,7 +38,8 @@ const Navbar = () => {
 					displayMobile={displayMobile}
 					toggleMobileNav={toggleMobileNav} />
 				<MobileNav
-					displayMobile={displayMobile} />
+					displayMobile={displayMobile}
+					toggleMobileNav={toggleMobileNav} />
 			</NavbarWrapper>
 			<Spacer displayMobile={displayMobile} />
 		</div>
