@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import PaintingInfo from './PaintingInfo';
 import styled from 'styled-components';
 
+// try to section different generas into other components
+
 const ImageWrapper = styled.div`
 	display: -webkit-box;
 	display: -webkit-flex;

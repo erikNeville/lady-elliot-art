@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const NavLinks = (props) => {
 	const closeNav = () => {
-		if (props.displayMobile === true) {
+		if (props.displayMobile) {
 			props.toggleMobileNav();
 		}
 	};

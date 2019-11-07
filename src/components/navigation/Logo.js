@@ -44,7 +44,7 @@ const LogoWrapper = styled.nav`
 
 const Logo = (props) => {
 	const closeNav = () => {
-		if (props.displayMobile === true) {
+		if (props.displayMobile) {
 			props.toggleMobileNav();
 		}
 	};

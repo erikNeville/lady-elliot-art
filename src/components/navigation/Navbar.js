@@ -21,6 +21,14 @@ const Navbar = () => {
 	const toggleMobileNav = () => {
 		setDisplayMobile(!displayMobile);
 	};
+	const handleScroll = () => {
+		if (displayMobile) {
+			toggleMobileNav();
+		}
+	};
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll);
+	});
 	const autoHideMobileNav = () => {
 		const screenWidth = window.innerWidth;
 		if (displayMobile && screenWidth > 768) {
