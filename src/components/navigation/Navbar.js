@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import DesktopNav from './DesktopNav';
 import MobileNav from './MobileNav';
-import Spacer from './Spacer';
 import styled from 'styled-components';
 
 const NavbarWrapper = styled.div`
@@ -40,17 +39,14 @@ const Navbar = () => {
 	});
   
 	return (
-		<div>
-			<NavbarWrapper>
-				<DesktopNav
-					displayMobile={displayMobile}
-					toggleMobileNav={toggleMobileNav} />
-				<MobileNav
-					displayMobile={displayMobile}
-					toggleMobileNav={toggleMobileNav} />
-			</NavbarWrapper>
-			<Spacer displayMobile={displayMobile} />
-		</div>
+		<NavbarWrapper>
+			<DesktopNav
+				displayMobile={displayMobile}
+				toggleMobileNav={toggleMobileNav} />
+			<MobileNav
+				displayMobile={displayMobile}
+				toggleMobileNav={toggleMobileNav} />
+		</NavbarWrapper>
 	);
 };
 

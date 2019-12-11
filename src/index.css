@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  position: relative;
+  height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -16,4 +18,10 @@ code {
 * {
   padding: 0;
   margin: 0;
+}
+
+html {
+  height: 100%;
+  overflow-x: hidden;
+  background: white;
 }

@@ -1,93 +1,69 @@
 import React from 'react';
+import Categorized from './Categorized';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import PaintingInfo from './PaintingInfo';
 import styled from 'styled-components';
+
+// try to section different generas into other components
 
 const ImageWrapper = styled.div`
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
+	flex-flow: row nowrap;
+  justify-content: center;
+  align-content: center;
 	-webkit-flex-wrap: wrap;
 	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
 	overflow: hidden;
 
 	.image-grid {
 		margin: 1rem 2rem;
-		text-align: center;
-		-webkit-box-flex: 1;
-		-webkit-flex: 1 0 auto;
-		-ms-flex: 1 0 auto;
-		flex: 1 0 auto;
-		max-width: 80vw;
-		position: relative;
+    position: relative;
+		transition: all 0.4s
 	}
 	
 	.image {
+    align-self: center;
 		backface-visibility: hidden;
 		display: block;
-		height: auto;
+		position: relative;
 		width: 100%;
-		opacity: 1;
-	}
-
-	.info {
-		transition: 0.5s ease;
-		opacity: 0;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		-ms-transform: translate(-50%, -50%);
-		text-align: center;
-	}
-
-	.info-text {
-		background-color: black;
-		border-radius: 20px;
-		color: white;
-		font-size: 16px;
-		padding: 16px;
-	}
-
-	.image-grid:hover .image {
-		opacity: 0.95;
-	}
-
-	.image-grid:hover .info {
-		opacity: 0.96;
+		height: auto;
+    opacity: 1;
+    transition: all ease 0.4s
 	}
 `;
 
-const MyButton = styled.button`
-	background: lightgray;
-	outline: none;
-	border: none;
-`;
+// const MyButton = styled.button`
+// 	background: lightgray;
+// 	outline: none;
+// 	border: none;
+// `;
 
 
-const PaintingDisplay = (props) => {
+const PaintingDisplay = ({images}) => {
+	const {music, misc} = images.category;
+	// const [hovering, setHovering] = useState(false);
+	// const handleHover = () => {
+	// 	setHovering(!hovering);
+	// };
 	return (
 		<ImageWrapper>
-			{props.images.map((image) => (
-				<div className='image-grid' key={image.id}>
-					<MyButton image={image}>
-						<img
-							className='image'
-							src={image.src}
-							alt={image.title}
-							image={image} />
-						<div className='info'>
-							<div className='info-text'>
-								<p>{image.title}</p>
-								<p>{image.w}&quot; X {image.h}&quot;</p>
-							</div>
-						</div>
-					</MyButton>
+			<Categorized name='Music' type={music} />
+			<Categorized name='Miscellaneous' type={misc} />
+			{/* {images.map((image) => (
+				<div className='image-grid' key={image.src}>
+					<img
+						className='image'
+						src={image.src}
+						alt={image.title}
+						image={image} />
+					<PaintingInfo image={image} />					
 				</div>
-			))}
+			))} */}
 		</ImageWrapper>
 	);
 };

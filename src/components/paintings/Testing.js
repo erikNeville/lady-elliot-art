@@ -11,6 +11,7 @@ const ImageWrapper = styled.div`
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
+	flex-flow: row nowrap;
   justify-content: center;
   align-content: center;
 	-webkit-flex-wrap: wrap;
@@ -20,40 +21,33 @@ const ImageWrapper = styled.div`
 	.image-grid {
 		margin: 1rem 2rem;
     position: relative;
-    max-width: 80vw;
+		transition: all 0.4s;
+		@media screen and (max-width: 591px) {
+			margin: 1rem 1rem;
+		}
 	}
 	
 	.image {
     align-self: center;
 		backface-visibility: hidden;
 		display: block;
+		position: relative;
 		width: 100%;
+		height: auto;
     opacity: 1;
-    transition: 0.5s all ease;
-    /* this is a clue why the images aren't lining up right */
-    /* &:hover {
-      width: 101%;
-    } */
+    transition: all ease 0.4s
 	}
 `;
 
-const MyButton = styled.button`
-	background: lightgray;
-	outline: none;
-	border: none;
-`;
-
-
 const Testing = (props) => {
 	const [hovering, setHovering] = useState(false);
-	const handleHover = () => {
-		setHovering(!hovering);
-	};
-	console.log(hovering);
+	// const handleHover = () => {
+	// 	setHovering(!hovering);
+	// };
 	return (
 		<ImageWrapper>
 			{props.images.map((image) => (
-				<div className='image-grid' key={image.id}>
+				<div className='image-grid' key={image.src}>
 					<img
 						className='image'
 						src={image.src}

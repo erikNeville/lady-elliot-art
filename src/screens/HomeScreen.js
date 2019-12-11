@@ -1,14 +1,16 @@
 import React from 'react';
-import Bio from '../components/bio/Bio';
-import PaintingDisplay from '../components/paintings/PaintingDisplay';
+import {BodyContainer} from '../components/containers/BodyContainer';
+import {ScreenContainer} from '../components/containers/ScreenContainer';
+// import PaintingDisplay from '../components/paintings/PaintingDisplay';
 import Testing from '../components/paintings/Testing';
 
 const HomeScreen = () => {
 	return (
-		<div>
-			<Bio />
-			<Testing />
-		</div>
+		<BodyContainer>
+			<ScreenContainer>
+				<Testing />
+			</ScreenContainer>
+		</BodyContainer>
 	);
 };
 
