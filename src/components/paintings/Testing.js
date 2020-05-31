@@ -44,6 +44,7 @@ const Testing = (props) => {
 	// const handleHover = () => {
 	// 	setHovering(!hovering);
 	// };
+	console.log('home');
 	return (
 		<ImageWrapper>
 			{props.images.map((image) => (
